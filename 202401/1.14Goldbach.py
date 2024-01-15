@@ -85,14 +85,17 @@ def can_split(number):
 
 
 if __name__ == "__main__":
-    num = input("please input a Even number greater than 5\n")
-    if num.isdigit():
-        num = int(num)
-        if num > 5 and is_even(num):
-            result = can_split(num)
-            for i in result:
-                print(i)
+    while True:
+        num = input("please input a Even number greater than 5\n")
+        if num == 'Q' or num == 'q':
+            break
+        elif num.isdigit():
+            num = int(num)
+            if num > 5 and is_even(num):
+                result = can_split(num)
+                for i in result:
+                    print(i)
+            else:
+                print("Oops,the number must be Even and greater than 5")
         else:
-            print("Oops,the number must be Even and greater than 5")
-    else:
-        print("Please input number")
+            print("Please input number")
